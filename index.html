@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="theme-color" content="#0a0e17">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>English Pro - AR Finance Edition</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="app-header">
+    <div class="brand">
+      <span class="brand-logo">💼</span>
+      <div>
+        <div class="brand-title">English Pro</div>
+        <div class="brand-badge">AR Finance & Taxes</div>
+      </div>
+    </div>
+    <div class="header-status">
+      <div class="streak-pill" id="streakIndicator">🔥 0 días</div>
+      <button class="config-btn" id="openSettingsBtn" title="Configuración">⚙️</button>
+    </div>
+  </header>
+
+  <!-- Coach Bar -->
+  <main class="main-content">
+    <div class="coach-box" id="coachBanner">
+      <div class="coach-avatar">🇦🇷</div>
+      <div class="coach-content">
+        <div class="coach-name">Martín (Tu Coach Financiero)</div>
+        <div class="coach-message" id="coachSpeechText">
+          ¡Hola! Bienvenido. Vamos a entrenar tu inglés oral con foco en finanzas y normativa local. Los lunes vemos teoría y de martes a viernes practicamos 15 minutos en voz alta. ¡A meterle!
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 1: CLASE & PRÁCTICA DEL DÍA -->
+    <section id="tab-daily" class="tab-pane active">
+      <div class="week-indicator">
+        <span class="week-badge" id="currentWeekBadge">Semana 1 / 24</span>
+        <button class="btn-secondary" id="changeWeekBtn" style="padding:4px 8px; font-size:0.75rem;">Ver Programa</button>
+      </div>
+
+      <!-- Selector Lunes a Viernes -->
+      <div class="day-strip">
+        <button class="day-btn active" data-day="monday">
+          <span class="day-label">Lun</span>
+          <span class="day-type">Teoría & Gramática</span>
+        </button>
+        <button class="day-btn" data-day="writing">
+          <span class="day-label">Writing</span>
+          <span class="day-type">Escritura</span>
+        </button>
+        <button class="day-btn" data-day="tuesday">
+          <span class="day-label">Mar</span>
+          <span class="day-type">Shadowing</span>
+        </button>
+        <button class="day-btn" data-day="wednesday">
+          <span class="day-label">Mié</span>
+          <span class="day-type">Fonética</span>
+        </button>
+        <button class="day-btn" data-day="thursday">
+          <span class="day-label">Jue</span>
+          <span class="day-type">Escenarios</span>
+        </button>
+        <button class="day-btn" data-day="friday">
+          <span class="day-label">Vie</span>
+          <span class="day-type">Examen</span>
+        </button>
+      </div>
+
+      <!-- Contenido Dinámico del Día -->
+      <div id="dayContentArea">
+        <!-- Renderizado vía app.js -->
+      </div>
+    </section>
+
+    <!-- TAB 2: IMPORTADOR DE NOTICIAS & ARTÍCULOS -->
+    <section id="tab-custom" class="tab-pane">
+      <div class="card">
+        <div class="card-header-flex">
+          <h2 class="card-title">📰 Subir Texto o Noticia</h2>
+        </div>
+        <p style="font-size:0.82rem; color:var(--text-muted); margin-bottom:12px;">
+          Pegá un texto en inglés o español de economía, balances, resoluciones de ARCA o noticias (Ámbito, Cronista, Bloomberg). La IA extraerá vocabulario y te armará un quiz oral al instante.
+        </p>
+
+        <div class="input-group">
+          <label class="input-label">Título o Referencia</label>
+          <input type="text" id="articleTitleInput" class="input-text" placeholder="Ej: Balance trimestral o Informe BCRA">
+        </div>
+
+        <div class="input-group">
+          <label class="input-label">Texto o Contenido del Artículo</label>
+          <textarea id="articleTextInput" class="textarea-custom" rows="5" placeholder="Pegá aquí el texto o resumen de la noticia..."></textarea>
+        </div>
+
+        <button class="btn-primary" id="btnAnalyzeArticle">
+          <span>🧠 Procesar y Crear Práctica Oral</span>
+        </button>
+      </div>
+
+      <!-- Lista de artículos procesados -->
+      <div id="customArticlesList">
+        <!-- Renderizado dinámico -->
+      </div>
+    </section>
+
+    <!-- TAB 3: ASISTENTE VOCAL LIBRE (SPARRING CALL) -->
+    <section id="tab-sparring" class="tab-pane">
+      <div class="card">
+        <h2 class="card-title">🗣️ Conversación Oral Libre</h2>
+        <p style="font-size:0.82rem; color:var(--text-muted); margin-bottom:12px;">
+          Simulá una llamada de 5 a 15 minutos en inglés con un cliente del exterior, auditor o colega de finanzas. Hablá por el micrófono y el asistente te responderá con audio en inglés profesional y feedback en español.
+        </p>
+
+        <div class="input-group">
+          <label class="input-label">Rol del Asistente</label>
+          <select id="sparringRoleSelect" class="input-text">
+            <option value="CFO en Nueva York">CFO en Nueva York (Revisión de Budget y Margen)</option>
+            <option value="Auditor Senior Big Four">Auditor Senior Big Four (Auditoría de Cuentas y Previsiones)</option>
+            <option value="Inversor de Deuda Soberana">Inversor Extranjero (Preguntas sobre Brecha y Riesgo País)</option>
+            <option value="Consultor Tributario Internacional">Consultor Tributario (Precios de Transferencia e Impuesto a las Ganancias)</option>
+          </select>
+        </div>
+
+        <div class="voice-arena" id="sparringVoiceArena">
+          <button class="mic-action-btn" id="sparringMicBtn">🎙️</button>
+          <div class="mic-hint" id="sparringMicHint">Tocá para empezar a hablar en inglés</div>
+          <div class="speech-live-text" id="sparringLiveTranscript">Tu voz aparecerá aquí...</div>
+        </div>
+
+        <div id="sparringConversationLog" style="display:flex; flex-direction:column; gap:10px; margin-top:14px;">
+          <!-- Mensajes del sparring -->
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 4: MI PROGRESO & STATS -->
+    <section id="tab-progress" class="tab-pane">
+      <div class="card">
+        <h2 class="card-title">📊 Tu Progreso en los 6 Meses</h2>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; margin: 14px 0;">
+          <div style="background:#0d1424; padding:12px; border-radius:10px; border:1px solid var(--card-border); text-align:center;">
+            <div style="font-size:0.75rem; color:var(--text-muted);">Semana Actual</div>
+            <div style="font-size:1.4rem; font-weight:800; color:#60a5fa;" id="statsCurrentWeek">1 / 24</div>
+          </div>
+          <div style="background:#0d1424; padding:12px; border-radius:10px; border:1px solid var(--card-border); text-align:center;">
+            <div style="font-size:0.75rem; color:var(--text-muted);">Pronunciación Promedio</div>
+            <div style="font-size:1.4rem; font-weight:800; color:#34d399;" id="statsPronunciationAvg">85%</div>
+          </div>
+        </div>
+
+        <h3 style="font-size:0.9rem; margin-bottom:8px; color:#fff;">Historial de Evaluaciones Semanales</h3>
+        <div id="progressHistoryList" style="font-size:0.82rem; color:var(--text-muted);">
+          Sin evaluaciones registradas aún. ¡Completá el examen del viernes para registrar tu primera nota!
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Bottom Navigation -->
+  <nav class="bottom-nav">
+    <button class="nav-item active" data-tab="tab-daily">
+      <span class="icon">📅</span>
+      <span>Semana</span>
+    </button>
+    <button class="nav-item" data-tab="tab-custom">
+      <span class="icon">📰</span>
+      <span>Noticias</span>
+    </button>
+    <button class="nav-item" data-tab="tab-sparring">
+      <span class="icon">🎙️</span>
+      <span>Sparring</span>
+    </button>
+    <button class="nav-item" data-tab="tab-progress">
+      <span class="icon">📊</span>
+      <span>Progreso</span>
+    </button>
+  </nav>
+
+  <!-- Modal Configuración -->
+  <div class="modal-overlay" id="settingsModal">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3 style="color:#fff; font-size:1.1rem;">⚙️ Configuración y Conexiones</h3>
+        <button class="modal-close" id="closeSettingsBtn">&times;</button>
+      </div>
+
+      <div class="input-group">
+        <label class="input-label">Idioma que estás estudiando</label>
+        <select id="targetLanguageSelect" class="input-text">
+          <option value="en-US">Inglés (Finanzas & Negocios)</option>
+          <option value="pt-BR">Portugués (Mercosur & Negocios Brasil)</option>
+          <option value="it-IT">Italiano (Comercial)</option>
+          <option value="fr-FR">Francés (Corporativo)</option>
+        </select>
+      </div>
+
+      <div class="input-group">
+        <label class="input-label">URL Web App de Google Apps Script</label>
+        <input type="text" id="gasUrlInput" class="input-text" placeholder="https://script.google.com/macros/s/.../exec">
+        <span style="font-size:0.72rem; color:var(--text-muted);">Para guardar y sincronizar tu progreso en tu Google Sheets.</span>
+      </div>
+
+      <div class="input-group">
+        <label class="input-label">Gemini API Key (Gratuita de Google AI Studio)</label>
+        <input type="password" id="geminiKeyInput" class="input-text" placeholder="AIzaSy...">
+        <span style="font-size:0.72rem; color:var(--text-muted);">Obtené tu clave gratis en aistudio.google.com. Se guarda únicamente en tu teléfono.</span>
+      </div>
+
+      <div class="input-group">
+        <label class="input-label">Velocidad de pronunciación (Audio)</label>
+        <input type="range" id="speechRateRange" min="0.7" max="1.1" step="0.05" value="0.9" style="width:100%;">
+        <div style="display:flex; justify-content:space-between; font-size:0.75rem; color:var(--text-muted);">
+          <span>Más lento</span>
+          <span id="rateValueLabel">0.9x</span>
+          <span>Nativo</span>
+        </div>
+      </div>
+
+      <button class="btn-primary" id="saveSettingsBtn" style="margin-top:16px;">Guardar Cambios</button>
+    </div>
+  </div>
+
+  <!-- Modal Curriculum Completo -->
+  <div class="modal-overlay" id="curriculumModal">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3 style="color:#fff; font-size:1.1rem;">📚 Roadmap 24 Semanas</h3>
+        <button class="modal-close" id="closeCurriculumBtn">&times;</button>
+      </div>
+      <div id="curriculumWeeksList" style="display:flex; flex-direction:column; gap:8px;">
+        <!-- Semanas -->
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
