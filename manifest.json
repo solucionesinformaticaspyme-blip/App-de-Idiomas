@@ -4,8 +4,8 @@
   "description": "App de inglés profesional hablado para finanzas, contabilidad e impuestos argentinos",
   "start_url": "./index.html",
   "display": "standalone",
-  "background_color": "#0d1117",
-  "theme_color": "#0a84ff",
+  "background_color": "#FAF8F5",
+  "theme_color": "#FAF8F5",
   "icons": [
     {
       "src": "./icons/icon-192.png",

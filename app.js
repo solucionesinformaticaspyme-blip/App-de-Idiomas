@@ -21,39 +21,102 @@ const state = {
   evaluationHistory: JSON.parse(localStorage.getItem('ep_history') || '[]')
 };
 
-// Currículum de contingencia / offline (Semana 1 a Semana 3 pre-cargadas)
+// Currículum con Explicaciones Largas, Ejemplos de Negocios y Modo Podcast (70% Inglés / 30% Español)
 const offlineCurriculum = [
   {
     week: 1,
-    title: "Financial Statements & Core Grammar: Active vs Passive Voice in Audits",
+    title: "Financial Statements & Corporate Grammar: Active vs Passive Voice in Audits",
     category: "Contabilidad, Finanzas & Gramática Estructural",
     theoryMarkdown: `
-### 📘 Masterclass Lunes: Financial Terminology & Gramática Pesada
+### 📘 Masterclass Lunes: Financial Statements & Gramática Estructural Profunda
 
-#### 1. Marco Gramatical: La Voz Pasiva Formal en Informes y Auditorías
-En el inglés contable y financiero internacional, los informes ejecutivos y notas a los estados contables rara vez usan la primera persona (*"We depreciated the asset"*). Se utiliza prioritariamente la **Passive Voice (Voz Pasiva)** para transmitir objetividad técnica:
+#### 1. Fundamentos del Lenguaje Financiero Corporativo
+Cuando un profesional de finanzas o contabilidad en Argentina interactúa con una casa matriz en Nueva York, Londres o Zúrich, el error más común no es el vocabulario suelto, sino trasladar las estructuras de redacción directa del español al inglés.
 
-* **Voz Activa (informal):** *"The company recorded a loss."*
-* **Voz Pasiva (formal contable):** *"A net loss was recognized in the fiscal period."*
-* **Fórmula clave:** **[Sujeto receptor] + [Verbo TO BE conjugado] + [Participio Pasado (Past Participle)]**
-  * *Present Perfect Passive:* *"Accounts receivable **have been adjusted** for doubtful accounts."*
-  * *Past Passive:* *"Current assets **were revalued** pursuant to IFRS standards."*
+En el español de negocios solemos decir: *"Ajustamos la cuenta deudores incobrables porque vimos que tres clientes no van a pagar"* o *"Depreciamos la maquinaria según la tabla impositiva"*. 
+Sin embargo, en el estándar contable anglosajón y en las auditorías de Big Four (PwC, EY, Deloitte, KPMG), este estilo en primera persona suena informal y poco riguroso. En su lugar, el estándar exige la **Passive Voice (Voz Pasiva)**.
 
-#### 2. Preposiciones de Impacto Financiero (Error típico):
-* Aumentar/Disminuir **EN** una cifra: se usa **BY** (*"Operating margin dropped **by** 3.5%"*, nunca 'in').
-* Aumentar/Disminuir **A** una cifra meta: se usa **TO** (*"Cash reserves rose **to** 10 million dollars"*).
-* Subir **DESDE** un valor base: se usa **FROM** (*"Revenue grew from $5M to $8M"*).
+#### 2. La Regla de Oro Gramatical: La Voz Pasiva en Informes y Auditorías
+La voz pasiva traslada el foco desde *quién ejecutó la acción* hacia *el hecho contable en sí mismo*:
+* **Informal / Conversacional:** *"We recorded a substantial loss due to inflation."*
+* **Estándar Ejecutivo Formal:** *"A substantial monetary loss was recorded in the quarterly financial statements."*
 
-#### 3. Falsos Amigos & Términos Contables Argentinos:
-* **Bienes de Cambio** ➔ **Inventories** / **Stock**.
-* **Bienes de Uso** ➔ **Property, Plant and Equipment (PP&E)**.
-* **Créditos por Ventas** ➔ **Accounts Receivable (A/R)**.
-* **Deudas Comerciales / Proveedores** ➔ **Accounts Payable (A/P)**.
-* **Previsión para deudores incobrables** ➔ **Allowance for Doubtful Accounts**.
+##### Fórmulas estructurales que debes dominar:
+1. **Present Perfect Passive (Para hechos recientes con impacto actual en el balance):**
+   * **Fórmula:** [Sujeto contable] + **have/has been** + [Participio Pasado]
+   * *Ejemplo real:* *"Accounts receivable **have been adjusted** upward by two million pesos to reflect default risk."*
+   * *Traducción explicada:* "Los créditos por ventas han sido ajustados al alza en dos millones de pesos para reflejar el riesgo de incobrabilidad."
+2. **Past Simple Passive (Para movimientos cerrados del ejercicio):**
+   * **Fórmula:** [Sujeto contable] + **was/were** + [Participio Pasado]
+   * *Ejemplo real:* *"Non-current tangible assets **were revalued** pursuant to IFRS standards."*
+   * *Traducción explicada:* "Los activos no corrientes tangibles fueron revaluados de conformidad con las normas NIIF/IFRS."
 
-#### 🎙️ Fonética Crítica:
-La **"b"** en **Debt** (*debt* = /det/) y en **Doubt** (*doubt* = /daʊt/) es 100% muda.
+#### 3. Preposiciones Financieras de Variación (El error más costoso):
+En inglés, cambiar la preposición altera por completo el significado contable:
+* **BY (Indica el margen o la brecha de variación):** *"Operating profit fell **by** 5%."* (El beneficio cayó un 5%, ej. de 20% a 15%).
+* **TO (Indica el punto final o meta alcanzada):** *"Operating profit fell **to** 5%."* (El beneficio cayó hasta llegar al 5%).
+* **FROM ... TO (El trayecto completo):** *"Gross margin contracted **from** 28% **to** 22% due to local supplier price increases."*
+* *¡Alerta criolla!:* Nunca digas *"fell in 5%"*. Decir *in* es un calco del castellano y gramaticalmente incorrecto.
+
+#### 4. Equivalencias Técnicas: Argentina vs. IFRS / US GAAP
+* **Bienes de Cambio:** Se traduce como **Inventories** (US) o **Stock** (UK). Jamás 'Exchange goods'.
+* **Bienes de Uso:** **Property, Plant and Equipment (PP&E)** o **Fixed Assets**.
+* **Créditos por Ventas:** **Accounts Receivable (A/R)**.
+* **Deudas Comerciales / Proveedores:** **Accounts Payable (A/P)**.
+* **Previsión para deudores incobrables:** **Allowance for Doubtful Accounts** (US) o **Provision for Bad Debts** (UK).
+* **Resultado del Ejercicio:** **Net Income** o **Profit for the Year**.
+
+#### 🎙️ Fonética Crítica de Negocios:
+En la palabra **Debt** (deuda) y **Doubt** (duda), la letra **"b" es 100% muda**. Se pronuncia exactamente como */det/* y */daʊt/*. Si pronuncias la letra "b", cualquier auditor angloparlante sabrá que no dominas el inglés profesional.
     `,
+    // Guion continuo tipo Podcast para reproducir sin tocar el celu (70% ENG / 30% ESP)
+    commuteAudioTracks: [
+      {
+        speaker: "es-AR",
+        title: "Introducción de Martín",
+        text: "¡Hola! Bienvenidos a la clase de la semana. Hoy nos metemos a fondo con los Estados Contables y la estructura gramatical formal que usan los auditores internacionales. Empecemos escuchando los términos centrales del balance."
+      },
+      {
+        speaker: "en-US",
+        title: "Core Term 1: Balance Sheet",
+        text: "The Balance sheet, also known as the statement of financial position. For example: Our balance sheet reflects robust liquidity across all current assets, ensuring short term obligations are fully covered."
+      },
+      {
+        speaker: "es-AR",
+        title: "Comentario del Coach: Bienes de Cambio",
+        text: "Atención con esto: en Argentina decimos Bienes de Cambio, pero en un reporte en inglés tenés que decir Inventories. Escuchemos cómo se formula una caída de inventarios con voz pasiva y preposiciones correctas."
+      },
+      {
+        speaker: "en-US",
+        title: "Core Term 2: Inventories and Passive Voice",
+        text: "Inventories were written down by four hundred thousand dollars due to obsolescence. Please note the preposition: written down BY four hundred thousand dollars, reflecting the exact amount of the adjustment."
+      },
+      {
+        speaker: "es-AR",
+        title: "Regla fonética: Debt con b muda",
+        text: "Recordá siempre la regla de oro: la palabra deuda se escribe con b pero la b no suena jamás. Escuchá cómo suena de forma nativa."
+      },
+      {
+        speaker: "en-US",
+        title: "Phonetic Drill: Silent B",
+        text: "Debt. Net debt. Long term debt. For instance: Our company successfully refinanced all outstanding commercial debt at favorable fixed interest rates."
+      },
+      {
+        speaker: "es-AR",
+        title: "Gramática: Voz Pasiva en Auditorías",
+        text: "Pasemos ahora a la gramática formal. En lugar de decir 'we adjusted the accounts', los directores esperan escuchar 'accounts have been adjusted'. Escuchemos un párrafo modelo completo de auditoría."
+      },
+      {
+        speaker: "en-US",
+        title: "Executive Memo Listening Drill",
+        text: "During the latest audit review, the allowance for doubtful accounts was increased by fifteen percent. Several commercial receivables were reclassified as non-performing credits. Consequently, operating income was reduced by two point five million dollars."
+      },
+      {
+        speaker: "es-AR",
+        title: "Cierre de la lección",
+        text: "Excelente. Has completado la sesión de escucha de hoy. Cuando tengas un minuto libre, recordá hacer la práctica de Writing para redactar tu propio memorándum con estas mismas estructuras."
+      }
+    ],
     vocab: [
       { term: "Balance Sheet", arEquiv: "Estado de Situación Patrimonial / Balance General", phonetic: "/ˈbæl.əns ʃiːt/", example: "Our balance sheet shows strong liquidity in current assets." },
       { term: "Income Statement (P&L)", arEquiv: "Estado de Resultados / Cuadro de Resultados", phonetic: "/ˈɪn.kʌm ˈsteɪt.mənt/", example: "The P&L reflects higher financial costs due to interest rate spikes." },
@@ -66,6 +129,33 @@ La **"b"** en **Debt** (*debt* = /det/) y en **Doubt** (*doubt* = /daʊt/) es 10
       prompt: "Escribí un memorándum contable breve (3 a 5 oraciones en inglés) explicando por qué la previsión para deudores incobrables fue incrementada este trimestre.",
       grammarFocus: "Usa al menos 2 oraciones en voz pasiva formal (ej. 'was increased', 'were recognized') y una preposición de variación ('decreased by...').",
       modelAnswer: "During the current fiscal quarter, the allowance for doubtful accounts was adjusted upward by two million pesos. Several non-performing commercial credits were reclassified following credit committee evaluations. Consequently, operating profit was negatively impacted by 1.8%."
+    },
+    dailyWritingRules: {
+      monday: {
+        title: "Regla de Oro: Objetividad en Memos con Voz Pasiva",
+        rule: "En redacción financiera anglosajona, nunca abras un informe diciendo 'We noticed...'. Abrí con el hecho contable: 'A variance was observed in operating expenditures'.",
+        example: "Ajuste contable: 'An impairment charge of $500,000 was recognized in accordance with IAS 36.'"
+      },
+      tuesday: {
+        title: "Puntuación de Cifras y Monedas (US vs Argentina)",
+        rule: "En inglés se invierten las comas y puntos: la coma separa miles ($1,000,000) y el punto indica decimales (5.25%). El signo pesos o dólar ($) va siempre pegado y antes de la cifra ($15M).",
+        example: "Correcto: 'Net income reached $12,450,200.50, up 3.4% year-over-year.'"
+      },
+      wednesday: {
+        title: "La Regla de Preposiciones Numéricas (BY vs TO)",
+        rule: "Para escribir sobre variaciones: 'dropped by 4%' significa que cayó 4 puntos porcentuales. 'dropped to 4%' significa que el valor final alcanzado fue 4%. Nunca uses 'in' para magnitudes.",
+        example: "Correcto: 'EBITDA margin contracted by 150 basis points, down to 18.2%.'"
+      },
+      thursday: {
+        title: "Conectores Lógicos de Negocios (Linking Words)",
+        rule: "Evita escribir oraciones telegráficas cortas. Usa conectores de alta jerarquía ejecutiva: 'Consequently' (en consecuencia), 'Pursuant to' (de conformidad con), 'Notwithstanding' (a pesar de).",
+        example: "Correcto: 'Notwithstanding macroeconomic headwinds, liquidity ratios remained solid.'"
+      },
+      friday: {
+        title: "Cierre Formal y Llamado a la Acción en Auditorías",
+        rule: "Para cerrar un email o nota formal a directivos extranjeros: 'Please let us know should you require further supporting documentation regarding this assessment.'",
+        example: "Fórmula: 'Should you have any inquiries, we remain at your disposal.'"
+      }
     },
     tasks: {
       tuesday: {
@@ -107,24 +197,67 @@ La **"b"** en **Debt** (*debt* = /det/) y en **Doubt** (*doubt* = /daʊt/) es 10
     title: "Argentine Macro, FX Markets & Grammar: Conditionals in Risk Management",
     category: "Macroeconomía, Tesorería & Condicionales",
     theoryMarkdown: `
-### 📘 Masterclass Lunes: FX Regimes & Condicionales de Negocios
+### 📘 Masterclass Lunes: Argentine FX, Capital Controls & Condicionales
 
-#### 1. Marco Gramatical: Segundo y Tercer Condicional en Análisis de Riesgo
-Al presentar escenarios económicos y coberturas cambiarias frente a volatilidad, se utilizan condicionales hipotéticos y contrafácticos:
+#### 1. El Desafío de Comunicar la Macro Argentina al Exterior
+Explicar la brecha cambiaria, el desdoblamiento del dólar y las restricciones del BCRA a directores financieros internacionales requiere precisión léxica y gramatical. Un error conceptual puede generar pánico en la casa matriz o malentendidos en la auditoría de consolidación.
 
-* **Segundo Condicional (Escenarios Hipotéticos de Futuro):**
-  * *Estructura:* **If + Simple Past, would / could + Verbo Infinitivo**
-  * *Ejemplo financiero:* *"If the Central Bank **devalued** the official exchange rate, import costs **would increase** immediately."*
-* **Tercer Condicional (Análisis de lo ocurrido en el pasado):**
-  * *Estructura:* **If + Past Perfect, would have + Participio Pasado**
-  * *Ejemplo financiero:* *"If we **had hedged** our dollar liabilities, we **would not have suffered** this FX loss."*
+#### 2. Marco Gramatical: Segundo Condicional para Modelar Escenarios de Riesgo
+Al debatir estrategias de cobertura de tesorería (*hedging*) o proyecciones de flujo de fondos, nunca se utiliza el presente indicativo directo. Se usa el **Second Conditional (Segundo Condicional)** para plantear hipótesis de negocios sin alarmar al comité:
 
-#### 2. Vocabulario Técnico Cambiario:
-* **Brecha Cambiaria**: **FX gap** o **Exchange rate spread**.
-* **Contado con Liquidación (CCL)**: **Blue-Chip Swap**.
-* **Cepo Cambiario**: **Currency restrictions** o **Capital controls**.
-* **Ajuste por Inflación**: **Inflation accounting (IAS 29)**.
+* **Estructura:** **If + [Sujeto] + [Verbo en Past Simple] , [Sujeto] + would / could + [Infinitivo]**
+* **Ejemplo 1 (Devaluación oficial):**
+  * *"If the Central Bank **accelerated** the crawling peg, our imported inventory costs **would surge** by fifteen percent."*
+  * *Explicación:* Si el BCRA acelerara la devaluación gradual, nuestros costos de inventario importado subirían un 15%.
+* **Ejemplo 2 (Brecha cambiaria):**
+  * *"If the blue-chip swap spread **widened** beyond thirty percent, local suppliers **would demand** advance cash payments."*
+  * *Explicación:* Si la brecha del Contado con Liquidación se ampliara más del 30%, los proveedores locales exigirían pagos anticipados en efectivo.
+
+#### 3. El Glosario Cambiario Indispensable:
+* **Brecha Cambiaria:** **FX gap** o **Exchange rate spread**.
+* **Contado con Liquidación (CCL):** En el mercado financiero internacional se denomina formalmente **Blue-Chip Swap**.
+* **Dólar MEP / Bolsa:** **Electronic Payment Market Dollar** o **Local bond-settled FX**.
+* **Cepo Cambiario:** **Capital controls** o **FX restrictions** (nunca traducir literalmente como 'currency padlock').
+* **Ajuste por Inflación:** **Inflation accounting** o **Constant currency adjustment** bajo la norma **IAS 29 (Financial Reporting in Hyperinflationary Economies)**.
+* **Giro de Dividendos:** **Dividend remittances** o **Repatriation of profits**.
     `,
+    commuteAudioTracks: [
+      {
+        speaker: "es-AR",
+        title: "Introducción de la Semana 2",
+        text: "Bienvenidos al módulo macroeconómico y cambiario. En este viaje vamos a aprender cómo explicarle la brecha del dólar y las normativas del Banco Central a un directivo extranjero, usando condicionales en inglés."
+      },
+      {
+        speaker: "en-US",
+        title: "FX Spread & Central Bank Controls",
+        text: "In emerging economies, foreign exchange controls often produce a substantial spread between the official exchange rate and financial markets. For instance: Due to strict Central Bank regulations, the blue-chip swap spread reached twenty-five percent this month."
+      },
+      {
+        speaker: "es-AR",
+        title: "Uso de Condicionales en Finanzas",
+        text: "Fijate cómo usamos el segundo condicional para plantear escenarios hipotéticos. En lugar de decir que algo va a pasar seguro, decimos: 'Si el tipo de cambio subiera, nosotros haríamos esto'."
+      },
+      {
+        speaker: "en-US",
+        title: "Conditional Scenario Drill",
+        text: "If the exchange rate gap expanded significantly, our treasury team would immediately execute dollar-linked sovereign bond hedges to protect working capital."
+      },
+      {
+        speaker: "es-AR",
+        title: "Término clave: Remesas de Dividendos",
+        text: "Cuando la casa matriz te pide girar utilidades, no digas 'send money'. El término técnico correcto es dividend remittances. Escuchemos el ejemplo."
+      },
+      {
+        speaker: "en-US",
+        title: "Corporate Term: Dividend Remittances",
+        text: "Dividend remittances abroad remain conditioned upon prior approval from the monetary authorities pursuant to Central Bank communication guidelines."
+      },
+      {
+        speaker: "es-AR",
+        title: "Cierre del viaje",
+        text: "Excelente viaje. Ya tenés las frases y la estructura gramatical en la cabeza. Más tarde podés abrir la app para practicar la pronunciación o hacer el desafío hablado."
+      }
+    ],
     vocab: [
       { term: "Exchange Rate Spread / FX Gap", arEquiv: "Brecha Cambiaria", phonetic: "/ɪksˈtʃeɪndʒ reɪt ɡæp/", example: "The FX spread between the official peg and the financial market reached 20%." },
       { term: "Blue-Chip Swap (CCL)", arEquiv: "Contado con Liquidación", phonetic: "/bluː tʃɪp swɑːp/", example: "Multinationals often use the blue-chip swap rate for balance sheet conversions." },
@@ -218,40 +351,155 @@ function initSpeechRecognition() {
   };
 }
 
-// Síntesis de voz nativa (Hablar en idioma objetivo)
+// Variables del Reproductor Continuo (Modo Viaje / Podcast)
+let commuteTracks = [];
+let currentCommuteIdx = 0;
+let isCommutePlaying = false;
+
+function setupCommutePlayer(tracks) {
+  commuteTracks = tracks || [];
+  currentCommuteIdx = 0;
+  isCommutePlaying = false;
+  updateCommuteUI();
+}
+
+function updateCommuteUI() {
+  const playBtn = document.getElementById('btnCommutePlayPause');
+  const trackTitle = document.getElementById('commuteCurrentTrack');
+  const trackSub = document.getElementById('commuteCurrentPart');
+
+  if (!commuteTracks || commuteTracks.length === 0) {
+    if (trackTitle) trackTitle.innerText = "No hay audios disponibles";
+    return;
+  }
+
+  const current = commuteTracks[currentCommuteIdx];
+  if (trackTitle) trackTitle.innerText = current ? current.title : "Listo para reproducir";
+  if (trackSub) trackSub.innerText = current ? `Parte ${currentCommuteIdx + 1} de ${commuteTracks.length} (${current.speaker === 'es-AR' ? '🇦🇷 Coach Español' : '🇺🇸 Inglés Nativo'})` : "";
+  if (playBtn) playBtn.innerHTML = isCommutePlaying ? '⏸️' : '▶️';
+}
+
+function toggleCommutePlayPause() {
+  if (!commuteTracks || commuteTracks.length === 0) return;
+  if (isCommutePlaying) {
+    pauseCommuteAudio();
+  } else {
+    playCommuteTrack(currentCommuteIdx);
+  }
+}
+
+function playCommuteTrack(idx) {
+  if (idx < 0 || idx >= commuteTracks.length) {
+    // Terminó todo el podcast
+    isCommutePlaying = false;
+    currentCommuteIdx = 0;
+    updateCommuteUI();
+    setCoachMessage("🎉 ¡Terminaste el podcast de hoy! Ya tenés incorporados los conceptos clave.");
+    return;
+  }
+
+  currentCommuteIdx = idx;
+  isCommutePlaying = true;
+  updateCommuteUI();
+
+  const track = commuteTracks[idx];
+  window.speechSynthesis.cancel();
+
+  const utterance = new SpeechSynthesisUtterance(track.text);
+  utterance.lang = track.speaker;
+  utterance.rate = track.speaker === 'es-AR' ? 1.0 : (state.speechRate || 0.9);
+
+  // Asignar voz natural según corresponda
+  const voices = window.speechSynthesis.getVoices();
+  const langPrefix = track.speaker.split('-')[0];
+  const targetVoice = voices.find(v => v.lang.startsWith(langPrefix) && (v.name.includes('Natural') || v.name.includes('Google') || v.name.includes('Samantha') || v.name.includes('Sabina')));
+  if (targetVoice) utterance.voice = targetVoice;
+
+  utterance.onend = () => {
+    if (isCommutePlaying) {
+      // Avanzar automáticamente a la siguiente parte sin que el usuario toque nada
+      setTimeout(() => {
+        playCommuteTrack(currentCommuteIdx + 1);
+      }, 700);
+    }
+  };
+
+  utterance.onerror = (e) => {
+    console.error('Error de audio en commute:', e);
+    isCommutePlaying = false;
+    updateCommuteUI();
+  };
+
+  window.speechSynthesis.speak(utterance);
+}
+
+function pauseCommuteAudio() {
+  isCommutePlaying = false;
+  window.speechSynthesis.cancel();
+  updateCommuteUI();
+}
+
+function nextCommuteTrack() {
+  if (currentCommuteIdx < commuteTracks.length - 1) {
+    playCommuteTrack(currentCommuteIdx + 1);
+  }
+}
+
+function prevCommuteTrack() {
+  if (currentCommuteIdx > 0) {
+    playCommuteTrack(currentCommuteIdx - 1);
+  }
+}
+
+// Síntesis de voz nativa (Hablar en idioma objetivo - individual)
 function speakEnglish(text, onComplete) {
   if (!('speechSynthesis' in window)) {
     alert('Tu navegador no soporta síntesis de voz.');
     return;
   }
-
   window.speechSynthesis.cancel();
   const utterance = new SpeechSynthesisUtterance(text);
   utterance.lang = state.targetLanguage || 'en-US';
   utterance.rate = state.speechRate || 0.9;
-
-  // Buscar voz natural en el idioma configurado
   const voices = window.speechSynthesis.getVoices();
   const langPrefix = (state.targetLanguage || 'en').split('-')[0];
   const targetVoice = voices.find(v => v.lang.startsWith(langPrefix) && (v.name.includes('Natural') || v.name.includes('Google') || v.name.includes('Samantha')));
   if (targetVoice) utterance.voice = targetVoice;
-
   if (onComplete) utterance.onend = onComplete;
   window.speechSynthesis.speak(utterance);
 }
 
-// Asistente en Español / Coach Argentino
-function speakCoachSpanish(text) {
+// Asistente en Español / Coach Argentino (Voz nativa de Argentina)
+function speakCoachSpanish(text, onComplete) {
   if (!('speechSynthesis' in window)) return;
   window.speechSynthesis.cancel();
   const utterance = new SpeechSynthesisUtterance(text);
   utterance.lang = 'es-AR';
   utterance.rate = 1.0;
+
+  const voices = window.speechSynthesis.getVoices();
+  // Priorizar voz específica de Argentina
+  const arVoice = voices.find(v => v.lang === 'es-AR' || v.lang === 'es_AR') ||
+                  voices.find(v => v.name.includes('Argentina') || v.name.includes('Tomás') || v.name.includes('Sabina')) ||
+                  voices.find(v => v.lang.startsWith('es') && (v.name.includes('Natural') || v.name.includes('Google') || v.name.includes('Paulina')));
+  if (arVoice) utterance.voice = arVoice;
+
+  if (onComplete) utterance.onend = onComplete;
   window.speechSynthesis.speak(utterance);
 }
 
 // Enlace de Eventos de la UI
 function bindUIEvents() {
+  // Controles de Modo Viaje / Podcast Continuo
+  const btnPlayCommute = document.getElementById('btnCommutePlayPause');
+  if (btnPlayCommute) btnPlayCommute.addEventListener('click', toggleCommutePlayPause);
+
+  const btnPrevCommute = document.getElementById('btnCommutePrev');
+  if (btnPrevCommute) btnPrevCommute.addEventListener('click', prevCommuteTrack);
+
+  const btnNextCommute = document.getElementById('btnCommuteNext');
+  if (btnNextCommute) btnNextCommute.addEventListener('click', nextCommuteTrack);
+
   // Navegación de Pestañas
   document.querySelectorAll('.nav-item').forEach(btn => {
     btn.addEventListener('click', () => {
@@ -332,6 +580,7 @@ function loadCurrentWeek() {
   const currentWeekObj = offlineCurriculum.find(w => w.week === state.currentWeek) || offlineCurriculum[0];
   state.curriculumData = currentWeekObj;
   document.getElementById('currentWeekBadge').innerText = `Semana ${currentWeekObj.week} / 24`;
+  setupCommutePlayer(currentWeekObj.commuteAudioTracks || []);
   renderDayContent();
 }
 
@@ -360,10 +609,10 @@ function renderDayContent() {
     area.innerHTML = `
       <div class="card">
         <h2 class="card-title">📖 Masterclass Teórica: ${data.title}</h2>
-        <div style="font-size:0.85rem; line-height:1.5; margin:12px 0; color:#cbd5e1;">
+        <div style="font-size:0.88rem; line-height:1.55; margin:14px 0; color:#4A5568;">
           ${formatMarkdownSimple(data.theoryMarkdown)}
         </div>
-        <h3 style="font-size:0.95rem; margin:16px 0 10px 0; color:#fff;">Vocabulario Técnico Clave (Escuchá la pronunciación):</h3>
+        <h3 style="font-size:0.95rem; margin:18px 0 10px 0; color:#1A202C;">Vocabulario Técnico Clave (Escuchá la pronunciación):</h3>
         ${vocabHtml}
       </div>
     `;
@@ -381,13 +630,19 @@ function renderDayContent() {
       <div class="card">
         <div class="card-header-flex">
           <h2 class="card-title">✍️ Práctica de Escritura & Redacción Ejecutiva</h2>
-          <span style="font-size:0.75rem; background:rgba(37,99,235,0.25); color:#60a5fa; padding:2px 8px; border-radius:12px; font-weight:700;">Grammar Check</span>
+          <span style="font-size:0.75rem; background:var(--pastel-sky); color:#1A365D; padding:3px 10px; border-radius:12px; font-weight:800;">Grammar & Rules</span>
         </div>
         
-        <div style="background:#0d1424; padding:12px; border-radius:8px; border:1px solid #1e293b; margin-bottom:12px;">
-          <strong style="color:#60a5fa; font-size:0.85rem;">Consigna de Redacción:</strong>
-          <p style="font-size:0.84rem; color:#cbd5e1; margin-top:4px;">${wTask.prompt}</p>
-          <div style="font-size:0.78rem; color:#f59e0b; margin-top:8px;">🎯 <strong>Foco gramatical:</strong> ${wTask.grammarFocus}</div>
+        <div class="daily-writing-banner">
+          <div class="daily-writing-badge">✍️ Norma Clave de Redacción</div>
+          <div class="daily-writing-title">Estructura Ejecutiva de un Memorandum</div>
+          <div class="daily-writing-desc">En las notas de auditoría o reportes para directores, comenzá con el impacto cuantitativo y las normas aplicables (ej. IFRS / US GAAP) antes de dar explicaciones operativas.</div>
+        </div>
+
+        <div style="background:var(--bg-card-soft); padding:14px; border-radius:10px; border:1px solid var(--card-border); margin-bottom:14px;">
+          <strong style="color:#2B6CB0; font-size:0.86rem;">Consigna de Redacción:</strong>
+          <p style="font-size:0.85rem; color:#4A5568; margin-top:4px;">${wTask.prompt}</p>
+          <div style="font-size:0.8rem; color:#C05621; margin-top:8px;">🎯 <strong>Foco gramatical:</strong> ${wTask.grammarFocus}</div>
         </div>
 
         <div class="input-group">
@@ -399,29 +654,35 @@ function renderDayContent() {
           <span>🧠 Corregir Gramática y Estilo Ejecutivo</span>
         </button>
 
-        <div style="margin-top:10px;">
-          <button class="btn-secondary" style="font-size:0.75rem; width:100%;" onclick="toggleWritingModelAnswer()">💡 Ver memorándum modelo de referencia</button>
-          <div id="writingModelAnswerBox" style="display:none; background:#0b1120; border:1px solid #1e293b; padding:10px; border-radius:8px; margin-top:8px; font-size:0.82rem; color:#cbd5e1;">
-            <strong style="color:#34d399;">Modelo ideal:</strong><br>
+        <div style="margin-top:12px;">
+          <button class="btn-secondary" style="font-size:0.78rem; width:100%;" onclick="toggleWritingModelAnswer()">💡 Ver memorándum modelo de referencia</button>
+          <div id="writingModelAnswerBox" style="display:none; background:var(--bg-card-soft); border:1px solid var(--card-border); padding:12px; border-radius:10px; margin-top:10px; font-size:0.84rem; color:#4A5568;">
+            <strong style="color:#276749;">Modelo ideal:</strong><br>
             "${wTask.modelAnswer}"
-            <button style="background:none;border:none;cursor:pointer;color:#93c5fd;font-size:0.75rem;margin-left:6px;" onclick="speakEnglish('${escapeQuotes(wTask.modelAnswer)}')">🔊 Escuchar cómo suena</button>
+            <button style="background:none;border:none;cursor:pointer;color:#2B6CB0;font-size:0.78rem;margin-left:6px;font-weight:700;" onclick="speakEnglish('${escapeQuotes(wTask.modelAnswer)}')">🔊 Escuchar redacción</button>
           </div>
         </div>
 
         <div id="writingFeedbackArea"></div>
       </div>
     `;
-    setCoachMessage("Momento de escribir. Pensá las oraciones con calma, aplicá las reglas de gramática y tocá Corregir para que el Coach analice tu redacción.");
+    setCoachMessage("Momento de escribir. Pensá las oraciones con calma, aplicá las normas de redacción y tocá Corregir para que el Coach analice tu texto.");
 
   } else if (state.activeDay === 'tuesday') {
     // MARTES: SHADOWING
     const task = data.tasks.tuesday;
+    const writingRule = (data.dailyWritingRules && data.dailyWritingRules.tuesday) || {
+      title: "Puntuación de Cifras y Monedas",
+      rule: "El signo $ va antes del número sin espacio ($1,000,000). Coma para miles, punto para decimales.",
+      example: "Our net margin expanded to $2.5M."
+    };
+
     let phrasesHtml = task.phrases.map((phrase, idx) => `
       <div class="vocab-card">
-        <div style="font-size:0.88rem; color:#fff; margin-bottom:8px;"><strong>#${idx+1}:</strong> "${phrase}"</div>
+        <div style="font-size:0.9rem; color:#2D3748; margin-bottom:8px; font-weight:700;"><strong>#${idx+1}:</strong> "${phrase}"</div>
         <div style="display:flex; gap:8px;">
-          <button class="btn-secondary" style="font-size:0.75rem; padding:6px 10px;" onclick="speakEnglish('${escapeQuotes(phrase)}')">🔊 Escuchar modelo</button>
-          <button class="btn-primary" style="font-size:0.75rem; padding:6px 10px;" onclick="startSinglePractice('${escapeQuotes(phrase)}')">🎙️ Repetir yo</button>
+          <button class="btn-secondary" style="font-size:0.75rem; padding:6px 12px;" onclick="speakEnglish('${escapeQuotes(phrase)}')">🔊 Escuchar modelo</button>
+          <button class="btn-primary" style="font-size:0.75rem; padding:6px 12px;" onclick="startSinglePractice('${escapeQuotes(phrase)}')">🎙️ Repetir yo</button>
         </div>
       </div>
     `).join('');
@@ -429,23 +690,37 @@ function renderDayContent() {
     area.innerHTML = `
       <div class="card">
         <h2 class="card-title">🗣️ Práctica de Martes: ${task.type}</h2>
-        <p style="font-size:0.82rem; color:var(--text-muted); margin-bottom:14px;">${task.description}</p>
+        
+        <div class="daily-writing-banner">
+          <div class="daily-writing-badge">✍️ Norma de Escritura de Hoy</div>
+          <div class="daily-writing-title">${writingRule.title}</div>
+          <div class="daily-writing-desc">${writingRule.rule}</div>
+          <div style="font-size:0.78rem; color:#7B341E; margin-top:6px; font-style:italic;">Ejemplo: "${writingRule.example}"</div>
+        </div>
+
+        <p style="font-size:0.84rem; color:var(--text-muted); margin-bottom:14px;">${task.description}</p>
         ${phrasesHtml}
         <div id="practiceFeedbackArea"></div>
       </div>
     `;
-    setCoachMessage("Martes de Shadowing: escuchá la frase y repetila de inmediato imitando el ritmo y la entonación como si estuvieras en una call corporativa.");
+    setCoachMessage("Martes de Shadowing y Escritura de Cifras: prestá atención a la norma de redacción arriba antes de empezar la repetición oral.");
 
   } else if (state.activeDay === 'wednesday') {
     // MIÉRCOLES: FONÉTICA
     const task = data.tasks.wednesday;
+    const writingRule = (data.dailyWritingRules && data.dailyWritingRules.wednesday) || {
+      title: "Preposiciones de Variación en Informes",
+      rule: "Usá 'BY' para magnitudes ('grew by 5%') y 'TO' para metas ('rose to 20%').",
+      example: "Operating expenses decreased by 8%."
+    };
+
     let challHtml = task.challenges.map((c, idx) => `
       <div class="vocab-card">
-        <div style="font-size:0.88rem; color:#60a5fa; margin-bottom:4px;"><strong>Desafío #${idx+1}:</strong> "${c.target}"</div>
-        <div style="font-size:0.78rem; color:#f59e0b; margin-bottom:8px;">💡 ${c.tip}</div>
+        <div style="font-size:0.9rem; color:#2B6CB0; margin-bottom:4px; font-weight:700;"><strong>Desafío #${idx+1}:</strong> "${c.target}"</div>
+        <div style="font-size:0.8rem; color:#C05621; margin-bottom:8px;">💡 ${c.tip}</div>
         <div style="display:flex; gap:8px;">
-          <button class="btn-secondary" style="font-size:0.75rem; padding:6px 10px;" onclick="speakEnglish('${escapeQuotes(c.target)}')">🔊 Escuchar</button>
-          <button class="btn-primary" style="font-size:0.75rem; padding:6px 10px;" onclick="startSinglePractice('${escapeQuotes(c.target)}')">🎙️ Pronunciar</button>
+          <button class="btn-secondary" style="font-size:0.75rem; padding:6px 12px;" onclick="speakEnglish('${escapeQuotes(c.target)}')">🔊 Escuchar</button>
+          <button class="btn-primary" style="font-size:0.75rem; padding:6px 12px;" onclick="startSinglePractice('${escapeQuotes(c.target)}')">🎙️ Pronunciar</button>
         </div>
       </div>
     `).join('');
@@ -453,24 +728,46 @@ function renderDayContent() {
     area.innerHTML = `
       <div class="card">
         <h2 class="card-title">🎯 Práctica de Miércoles: ${task.type}</h2>
-        <p style="font-size:0.82rem; color:var(--text-muted); margin-bottom:14px;">${task.description}</p>
+        
+        <div class="daily-writing-banner">
+          <div class="daily-writing-badge">✍️ Norma de Escritura de Hoy</div>
+          <div class="daily-writing-title">${writingRule.title}</div>
+          <div class="daily-writing-desc">${writingRule.rule}</div>
+          <div style="font-size:0.78rem; color:#7B341E; margin-top:6px; font-style:italic;">Ejemplo: "${writingRule.example}"</div>
+        </div>
+
+        <p style="font-size:0.84rem; color:var(--text-muted); margin-bottom:14px;">${task.description}</p>
         ${challHtml}
         <div id="practiceFeedbackArea"></div>
       </div>
     `;
-    setCoachMessage("Miércoles de Fonética. No te apures al hablar; marcá bien las consonantes y recordá las reglas de letras mudas.");
+    setCoachMessage("Miércoles de Fonética y Preposiciones de Redacción. No te apures al hablar y recordá la regla de preposiciones.");
 
   } else if (state.activeDay === 'thursday') {
     // JUEVES: ESCENARIO REAL
     const task = data.tasks.thursday;
+    const writingRule = (data.dailyWritingRules && data.dailyWritingRules.thursday) || {
+      title: "Conectores Lógicos de Negocios (Linking Words)",
+      rule: "Usa conectores formales como 'Notwithstanding', 'Pursuant to' y 'Consequently' para vincular argumentos de negocio.",
+      example: "Pursuant to local statutory provisions, reserves were retained."
+    };
+
     area.innerHTML = `
       <div class="card">
         <h2 class="card-title">💼 Práctica de Jueves: ${task.title}</h2>
-        <div style="background:#0d1424; padding:12px; border-radius:8px; border:1px solid #1e293b; margin-bottom:12px;">
-          <strong style="color:#f59e0b; font-size:0.85rem;">Situación:</strong>
-          <p style="font-size:0.82rem; color:#cbd5e1; margin-top:4px;">${task.scenario}</p>
+        
+        <div class="daily-writing-banner">
+          <div class="daily-writing-badge">✍️ Norma de Escritura de Hoy</div>
+          <div class="daily-writing-title">${writingRule.title}</div>
+          <div class="daily-writing-desc">${writingRule.rule}</div>
+          <div style="font-size:0.78rem; color:#7B341E; margin-top:6px; font-style:italic;">Ejemplo: "${writingRule.example}"</div>
         </div>
-        <p style="font-size:0.82rem; color:#fff; margin-bottom:10px;"><strong>Tu tarea oral:</strong> ${task.challengePrompt}</p>
+
+        <div style="background:var(--bg-card-soft); padding:14px; border-radius:10px; border:1px solid var(--card-border); margin-bottom:14px;">
+          <strong style="color:#C05621; font-size:0.86rem;">Situación en la Empresa:</strong>
+          <p style="font-size:0.84rem; color:#4A5568; margin-top:4px;">${task.scenario}</p>
+        </div>
+        <p style="font-size:0.85rem; color:#1A202C; margin-bottom:10px;"><strong>Tu tarea oral:</strong> ${task.challengePrompt}</p>
         
         <div class="voice-arena" id="thursdayVoiceArena">
           <button class="mic-action-btn" id="thursdayMicBtn" onclick="toggleThursdayMic('${escapeQuotes(task.referenceAnswer)}')">🎙️</button>
@@ -478,39 +775,52 @@ function renderDayContent() {
           <div class="speech-live-text" id="thursdayLiveTranscript">Esperando que hables...</div>
         </div>
 
-        <div style="margin-top:10px;">
-          <button class="btn-secondary" style="font-size:0.75rem; width:100%;" onclick="speakEnglish('${escapeQuotes(task.referenceAnswer)}')">💡 Escuchar respuesta modelo ideal</button>
+        <div style="margin-top:12px;">
+          <button class="btn-secondary" style="font-size:0.78rem; width:100%;" onclick="speakEnglish('${escapeQuotes(task.referenceAnswer)}')">💡 Escuchar respuesta modelo ideal</button>
         </div>
 
         <div id="thursdayFeedbackArea"></div>
       </div>
     `;
-    setCoachMessage("Jueves de Escenario Real. Planteá tu argumento con seguridad. Pensá la idea antes de presionar el botón de hablar.");
+    setCoachMessage("Jueves de Escenario Real. Planteá tu argumento con seguridad usando los conectores que vimos en la norma de redacción.");
 
   } else if (state.activeDay === 'friday') {
     // VIERNES: EXAMEN GATEKEEPER
     const task = data.tasks.friday;
+    const writingRule = (data.dailyWritingRules && data.dailyWritingRules.friday) || {
+      title: "Cierre Formal y Llamado a la Acción en Auditorías",
+      rule: "En emails formales a socios de auditoría: 'Should you require further clarification, please let us know.'",
+      example: "Fórmula ejecutiva: 'We remain at your disposal for any further inquiries.'"
+    };
+
     area.innerHTML = `
-      <div class="card" style="border: 1px solid rgba(239, 68, 68, 0.4);">
+      <div class="card" style="border: 2px solid rgba(229, 62, 62, 0.3);">
         <div class="card-header-flex">
-          <h2 class="card-title" style="color:#ef4444;">🛡️ Examen de Viernes: ${task.title}</h2>
-          <span style="font-size:0.75rem; background:rgba(239,68,68,0.2); color:#ef4444; padding:2px 8px; border-radius:12px; font-weight:700;">Gatekeeper</span>
+          <h2 class="card-title" style="color:#C53030;">🛡️ Examen de Viernes: ${task.title}</h2>
+          <span style="font-size:0.75rem; background:rgba(229,62,62,0.12); color:#C53030; padding:3px 10px; border-radius:12px; font-weight:800;">Gatekeeper</span>
         </div>
-        <p style="font-size:0.82rem; color:#cbd5e1; margin-bottom:10px;">${task.scenario}</p>
-        <div style="background:#131d35; padding:10px; border-radius:8px; font-size:0.78rem; color:#93c5fd; margin-bottom:14px;">
+
+        <div class="daily-writing-banner">
+          <div class="daily-writing-badge">✍️ Norma de Cierre de Semana</div>
+          <div class="daily-writing-title">${writingRule.title}</div>
+          <div class="daily-writing-desc">${writingRule.rule}</div>
+        </div>
+
+        <p style="font-size:0.85rem; color:#4A5568; margin-bottom:12px;">${task.scenario}</p>
+        <div style="background:var(--pastel-sky); padding:12px; border-radius:10px; font-size:0.8rem; color:#1A365D; margin-bottom:14px; font-weight:600;">
           ⚖️ <strong>Criterio para avanzar a la Semana ${data.week + 1}:</strong> ${task.criteria}
         </div>
 
         <div class="voice-arena" id="fridayVoiceArena">
           <button class="mic-action-btn" id="fridayMicBtn" onclick="toggleFridayExam()">🎙️</button>
-          <div class="mic-hint" id="fridayMicHint">Presioná y respondé durante 1 a 2 minutos</div>
+          <div class="mic-hint" id="fridayMicHint">Presioná y defendé tu postura en inglés</div>
           <div class="speech-live-text" id="fridayLiveTranscript">Tu defensa oral aparecerá aquí...</div>
         </div>
 
         <div id="fridayFeedbackArea"></div>
       </div>
     `;
-    setCoachMessage("Llegó el viernes. Hoy el Gatekeeper te toma examen oral. Si aprobás con 75% o más, desbloqueamos la semana que viene. ¡Concentración!");
+    setCoachMessage("Llegó el viernes. El Gatekeeper te toma examen oral. Si aprobás con 75% o más, desbloqueamos la semana que viene. ¡Concentración!");
   }
 }
 
@@ -928,12 +1238,53 @@ Devuelve un JSON con:
   state.customArticles.unshift(articleEntry);
   localStorage.setItem('ep_custom_articles', JSON.stringify(state.customArticles));
 
+  // Cargar este artículo en el reproductor de viaje automáticamente para poder escucharlo de corrido
+  const articleAudioTracks = [
+    {
+      speaker: "es-AR",
+      title: `Noticia: ${title}`,
+      text: `A continuación escuchamos el resumen y los términos clave del artículo: ${title}.`
+    },
+    {
+      speaker: "en-US",
+      title: "Executive Summary",
+      text: analysisResult.summary || "Summary of the financial news article."
+    },
+    {
+      speaker: "es-AR",
+      title: "Glosario extraído",
+      text: "Escuchemos ahora los términos financieros extraídos y sus oraciones de aplicación."
+    }
+  ];
+
+  (analysisResult.keyTerms || []).forEach(kt => {
+    articleAudioTracks.push({
+      speaker: "en-US",
+      title: kt.term,
+      text: `${kt.term}. For instance: ${kt.example}`
+    });
+  });
+
+  articleAudioTracks.push({
+    speaker: "es-AR",
+    title: "Pregunta de debate",
+    text: "Y cerramos con la pregunta para pensar en tu próxima reunión corporativa."
+  });
+
+  articleAudioTracks.push({
+    speaker: "en-US",
+    title: "Discussion Prompt",
+    text: `${analysisResult.speakingQuiz.question}. Model response: ${analysisResult.speakingQuiz.idealAnswer}`
+  });
+
+  setupCommutePlayer(articleAudioTracks);
+
   btn.innerHTML = `<span>🧠 Procesar y Crear Práctica Oral</span>`;
   btn.disabled = false;
   document.getElementById('articleTextInput').value = '';
 
   renderCustomArticlesList();
-  setCoachMessage(`¡Listo! Procesé "${title}". Extraje términos clave y tenés un quiz oral nuevo para practicar abajo.`);
+  setCoachMessage(`¡Listo! Procesé "${title}". Se cargó en la barra de audio superior para que le des Play y lo escuches en el viaje.`);
 }
 
 function renderCustomArticlesList() {
